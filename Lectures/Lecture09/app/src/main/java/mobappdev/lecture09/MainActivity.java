@@ -19,6 +19,11 @@ public class MainActivity extends Activity {
 
         mTextViewMessage = (TextView)findViewById(R.id.text_view_message);
 
+        if(savedInstanceState != null) {
+            String message = savedInstanceState.getString(KEY_MESSAGE);
+            mTextViewMessage.setText(message);
+        }
+
         Button buttonChangeMessage = (Button)findViewById(R.id.button_change_message);
         buttonChangeMessage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +33,12 @@ public class MainActivity extends Activity {
                 startActivityForResult(intent, 0);
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_MESSAGE, mTextViewMessage.getText().toString());
     }
 
     @Override
