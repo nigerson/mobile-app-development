@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Exploding App</string>
+    <string name="boom">BOOM!</string>
+</resources>
