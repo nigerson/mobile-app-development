@@ -1,8 +1,8 @@
 package mobappdev.lecture17.reclcyclerview;
 
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -27,7 +27,7 @@ public class DisplayActivity extends AppCompatActivity {
 
         CharSequence message = getIntent().getCharSequenceExtra(EXTRA_MESSAGE);
 
-        FragmentManager manager = getFragmentManager();
+        FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
                 .add(R.id.frame_layout_display, DisplayFragment.newInstance(message))
                 .commit();

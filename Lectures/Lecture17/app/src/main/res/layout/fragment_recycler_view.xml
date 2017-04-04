@@ -4,6 +4,7 @@
     android:id="@+id/recycler_view_example"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mobappdev.lecture17.reclcyclerview.RecyclerViewFragment">
+    tools:context="mobappdev.lecture17.reclcyclerview.RecyclerViewFragment"
+    android:background="#FF0">
 
 </android.support.v7.widget.RecyclerView>

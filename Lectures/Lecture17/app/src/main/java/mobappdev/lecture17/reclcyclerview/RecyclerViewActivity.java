@@ -13,17 +13,28 @@ public class RecyclerViewActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+        setContentView(R.layout.activity_recycler_master_detail);
 
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction()
-                .add(R.id.frame_layout_recycler_view, new RecyclerViewFragment())
-                .commit();
+        if(manager.findFragmentById(R.id.frame_layout_recycler_view) == null) {
+            manager.beginTransaction()
+                    .add(R.id.frame_layout_recycler_view, new RecyclerViewFragment())
+                    .commit();
+        }
     }
 
     @Override
     public void onItemClicked(CharSequence message) {
-        Intent intent = DisplayActivity.newIntent(this, message);
-        startActivity(intent);
+        FragmentManager manager = getSupportFragmentManager();
+
+        if(findViewById(R.id.frame_layout_recycler_detail_view) == null) {
+            Intent intent = DisplayActivity.newIntent(this, message);
+            startActivity(intent);
+        }
+        else {
+            manager.beginTransaction()
+                    .replace(R.id.frame_layout_recycler_detail_view, DisplayFragment.newInstance(message))
+                    .commit();
+        }
     }
 }
