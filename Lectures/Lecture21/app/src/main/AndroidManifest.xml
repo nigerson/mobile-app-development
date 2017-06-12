@@ -22,15 +22,6 @@
         <service
             android:name=".reminder.ReminderService"
             android:exported="false" />
-        <service
-            android:name=".reminder.MyIntentService"
-            android:exported="false" />
-        <service
-            android:name=".sharedprefs.MyIntentService"
-            android:exported="false" />
-        <service
-            android:name=".sharedprefs.MyIntentService2"
-            android:exported="false"></service>
     </application>
 
 </manifest>

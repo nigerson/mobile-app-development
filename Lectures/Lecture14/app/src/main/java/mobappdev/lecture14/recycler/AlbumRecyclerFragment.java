@@ -12,11 +12,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import java.util.List;
 
 import mobappdev.lecture14.MainActivity;
 import mobappdev.lecture14.R;
+import mobappdev.lecture14.listview.AlbumListActivity;
 import mobappdev.lecture14.model.Album;
 import mobappdev.lecture14.model.Collection;
 
@@ -66,7 +68,7 @@ public class AlbumRecyclerFragment extends Fragment {
                 handled = true;
                 break;
             case R.id.menu_list_view:
-                restartActivity(MainActivity.class);
+                restartActivity(AlbumListActivity.class);
                 handled = true;
                 break;
             default:
